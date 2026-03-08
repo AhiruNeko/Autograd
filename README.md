@@ -50,8 +50,6 @@ max_prob = round(np.argmax(probs), 2) # 预测数字
 | **优化器** | SGD |
 | **损失函数** | CrossEntropyLoss (交叉熵) |
 
----
-
 ## 🛠️ 关键技术实现
 
 * **梯度裁剪**：`np.clip(p.grad, -5, 5, out=p.grad)` 解决 RNN 梯度爆炸。
@@ -70,8 +68,6 @@ max_prob = round(np.argmax(probs), 2) # 预测数字
 | **核心单元** | RNN (包含 $W_{xh}, W_{hh}, W_{hy}$) |
 | **隐藏状态** | 循环传递的 $h$，负责捕捉序列的长短期记忆 |
 | **采样策略** | 基于 Softmax 概率分布的随机采样 (Random Choice) |
-
----
 
 ## 🛠️ 关键技术实现
 
