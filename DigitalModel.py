@@ -89,11 +89,12 @@ def main():
 
         if prediction == actual:
             correct += 1
-        if i < 25:
+        if i < 10:
             res = "√" if prediction == actual else "×"
             print(f"Sample {i:<3} | {prediction:<8} | {actual:<8} | {res:<8} | {max_prob:<8}")
 
     accuracy = (correct / len(X_test)) * 100
+    print(" ...       | ...      | ...      | ...      | ...     ")
     print("-" * 45)
     print(f"Accuracy: {accuracy:.2f}%")
 

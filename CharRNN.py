@@ -17,15 +17,15 @@ class CharRNN(Module):
 
 
 def main():
-    text = "learning deep learning is fun"
+    text = "neural network is amazing"
     chars = sorted(list(set(text)))
     vocab_size = len(chars)
     char_to_ix = {ch: i for i, ch in enumerate(chars)}
     ix_to_char = {i: ch for i, ch in enumerate(chars)}
     hidden_size = 64
     learning_rate = 0.05
-    epochs = 500
-    seq_length = 10
+    epochs = 800
+    seq_length = 8
 
     model = CharRNN(vocab_size, hidden_size, vocab_size)
     optimizer = SGD(model.parameters(), lr=learning_rate)
@@ -67,7 +67,7 @@ def main():
         if epoch > 0 and epoch % 100 == 0:
             optimizer.lr *= 0.5
     print("\n-----Testing-----")
-    for start_char in ["l", "d", "f"]:
+    for start_char in ["n", "i", "a"]:
         result = [start_char]
         h_gen = Tensor(np.zeros((1, hidden_size)))
         curr_x = to_one_hot(start_char)
